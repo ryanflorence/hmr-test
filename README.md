@@ -3,7 +3,8 @@ HALP!
 
 ```
 npm install
-npm start
+npm start # does not work, uses node-js dev server API
+npm run start-cli # works, can't find the difference
 ```
 
 Open [http://localhost:8080](http://localhost:8080)
