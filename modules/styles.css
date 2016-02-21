@@ -1,0 +1,8 @@
+.content {
+  color: white;
+  background: hsl(200, 50%, 30%);
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: 200;
+  padding: 100px;
+}
