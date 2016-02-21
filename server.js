@@ -11,11 +11,16 @@ import ClientDevConfig from './webpack.config'
 // --inline option
 ClientDevConfig.entry.unshift('webpack-dev-server/client?http://localhost:8080/')
 
+// https://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement-with-node-js-api
+ClientDevConfig.entry.unshift('webpack/hot/dev-server')
+ClientDevConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
+
 const compiler = webpack(ClientDevConfig)
 
 const server = new WebpackDevServer(compiler, {
-  hot: true, // `--hot`
-  contentBase: '.' // `--content-base`
+  contentBase: '.', // `--content-base`
+  // https://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement-with-node-js-api
+  hot: true
 })
 
 // WHAT ELSE IS DIFFERENT?! D:
