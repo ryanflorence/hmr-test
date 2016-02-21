@@ -17,12 +17,10 @@ ClientDevConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
 const compiler = webpack(ClientDevConfig)
 
 const server = new WebpackDevServer(compiler, {
-  contentBase: '.', // `--content-base`
   // https://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement-with-node-js-api
-  hot: true
+  hot: true,
+  contentBase: '.' // `--content-base`
 })
-
-// WHAT ELSE IS DIFFERENT?! D:
 
 server.listen(8080, 'localhost', () => {
   console.log('Webpack dev server listening on port', 8080)
